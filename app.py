@@ -19,47 +19,47 @@ def amazon():
 
 @app.route('/company/apple')
 def apple():
-    return render_template('index.html')
+    return render_template('apple.html')
 
 @app.route('/company/facebook')
 def facebook():
-    return render_template('index.html')
+    return render_template('facebook.html')
 
 @app.route('/company/google')
 def google():
-    return render_template('index.html')
+    return render_template('google.html')
 
 @app.route('/company/microsoft')
 def microsoft():
-    return render_template('index.html')
+    return render_template('microsoft.html')
 
 @app.route('/company/samsung')
 def samsung():
-    return render_template('index.html')
+    return render_template('samsung.html')
 
 @app.route('/company/twitter')
 def twitter():
-    return render_template('index.html')
+    return render_template('twitter.html')
 
 @app.route('/tech/ai')
 def ai():
-    return render_template('index.html')
+    return render_template('ai.html')
 
 @app.route('/tech/bigdata')
 def bigdata():
-    return render_template('index.html')
+    return render_template('bigdata.html')
 
 @app.route('/tech/cloud')
 def cloud():
-    return render_template('index.html')
+    return render_template('cloud.html')
 
 @app.route('/tech/ecommerce')
 def ecommerce():
-    return render_template('index.html')
+    return render_template('ecommerce.html')
 
 @app.route('/tech/vr')
 def vr():
-    return render_template('index.html')
+    return render_template('vr.html')
 
 @app.errorhandler(404)
 def page_not_foun(e):

@@ -11,11 +11,11 @@ def index():
 
 @app.route('/today')
 def today():
-    return render_template('index.html')
+    return render_template('today.html')
 
 @app.route('/company/amazon')
 def amazon():
-    return render_template('index.html')
+    return render_template('amazon.html')
 
 @app.route('/company/apple')
 def apple():

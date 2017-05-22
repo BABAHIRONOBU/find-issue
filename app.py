@@ -5,8 +5,60 @@ from flask import Flask, render_template, send_from_directory
 app = Flask(__name__)
 
 # controllers
-@app.route("/")
-def hello():
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/today')
+def today():
+    return render_template('index.html')
+
+@app.route('/company/amazon')
+def amazon():
+    return render_template('index.html')
+
+@app.route('/company/apple')
+def apple():
+    return render_template('index.html')
+
+@app.route('/company/facebook')
+def facebook():
+    return render_template('index.html')
+
+@app.route('/company/google')
+def google():
+    return render_template('index.html')
+
+@app.route('/company/microsoft')
+def microsoft():
+    return render_template('index.html')
+
+@app.route('/company/samsung')
+def samsung():
+    return render_template('index.html')
+
+@app.route('/company/twitter')
+def twitter():
+    return render_template('index.html')
+
+@app.route('/tech/ai')
+def ai():
+    return render_template('index.html')
+
+@app.route('/tech/bigdata')
+def bigdata():
+    return render_template('index.html')
+
+@app.route('/tech/cloud')
+def cloud():
+    return render_template('index.html')
+
+@app.route('/tech/ecommerce')
+def ecommerce():
+    return render_template('index.html')
+
+@app.route('/tech/vr')
+def vr():
     return render_template('index.html')
 
 @app.errorhandler(404)

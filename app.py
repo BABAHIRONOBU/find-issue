@@ -58,8 +58,16 @@ def ecommerce():
     return render_template('ecommerce.html')
 
 @app.route('/tech/vr')
-def vr():
+def tech_vr():
     return render_template('vr.html')
+
+@app.route('/static')
+def user_static():
+    return render_template('static.html')
+
+@app.route('/setting')
+def user_setting():
+    return render_template('setting.html')
 
 @app.errorhandler(404)
 def page_not_foun(e):

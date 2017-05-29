@@ -25,7 +25,8 @@
     <link href="{{ url_for('static', filename='assets/sweet-alert/sweet-alert.min.css') }}" rel="stylesheet">
 
     <!-- datetime picker-->
-    <link href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet"
+          media="screen">
 
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -145,7 +146,8 @@
             <!-- user login dropdown start-->
             <li class="dropdown text-center">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <img alt="" src="{{ url_for('static', filename='img/avatar-2.jpg') }}" class="img-circle profile-img thumb-sm">
+                    <img alt="" src="{{ url_for('static', filename='img/avatar-2.jpg') }}"
+                         class="img-circle profile-img thumb-sm">
                     <span class="username">Jae woo</span> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu extended pro-menu fadeInUp animated" tabindex="5003"
@@ -169,13 +171,15 @@
         <div class="row">
             <div class="form-group">
                 <label for="dtp_input2" class="col-md-1 control-label">날짜 선택</label>
-                <div class="input-group date form_date col-md-4" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <div class="input-group date form_date col-md-4" data-date="" data-date-format="dd MM yyyy"
+                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                     <input class="form-control" size="16" type="text" value="" readonly>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
-				<input type="hidden" id="dtp_input2" value="" />
+                <input type="hidden" id="dtp_input2" value=""/>
                 <button type="button" class="btn btn-primary m-b-5 btn-datepicker">선택</button>
+                <button class="btn btn-icon btn-danger m-b-5 pull-right"> <i class="ion-arrow-down-a"></i>&nbsp;&nbsp;PDF 다운로드</button>
             </div>
         </div>
         <hr>
@@ -194,7 +198,8 @@
             </div>
             <div class="col-md-8">
                 <h4>How AI is used to infer human emotion</h4>
-                <p><span class="label label-primary">400자 요약</span>&nbsp; &nbsp; Technology that reads your emotional state, for example by combining facial and voice expressions,
+                <p><span class="label label-primary">400자 요약</span>&nbsp; &nbsp; Technology that reads your emotional
+                    state, for example by combining facial and voice expressions,
                     represents the emotion AI space.
                     Our technology, like many computer vision approaches, relies on machine learning techniques in which
                     algorithms learn from examples (training data).
@@ -203,8 +208,12 @@
                     transfer to a different data set, so a video analyzed for facial expression can also be labeled for
                     the speech modality).
                 </p>
-                <p>AI</p>
-                #active learning
+                <div class="expert-comment">
+                    <p class="quote-content"><span class="label label-primary inline">전문가 코멘트</span><em>&nbsp; &nbsp;AI
+                        전문가로서 위 기사는 이부분을 중요시해서 보시면 됩니다.</em> -@박형진, 개발자</p>
+                    <img src="{{ url_for('static', filename='img/avatar-3.jpg') }}" class="thumb-sm br-radius">
+                </div>
+                <p>#AI #active learning</p>
             </div>
         </div>
         <!-- /.row -->
@@ -226,7 +235,8 @@
             </div>
             <div class="col-md-8">
                 <h4>Frame raises $16 million to bring your desktop to the cloud</h4>
-                <p> <span class="label label-primary">400자 요약</span>&nbsp; &nbsp;Frame raised $16 million to help build out a cloud-based platform that hosts desktop workspaces
+                <p><span class="label label-primary">400자 요약</span>&nbsp; &nbsp;Frame raised $16 million to help build
+                    out a cloud-based platform that hosts desktop workspaces
                     capable of handling data-intensive applications.
                     Frame’s platform allows Windows applications to run inside a browser in a way that its investors say
                     is faster, simpler, more easily programmable, and — on reliable cellular networks — workable on
@@ -235,8 +245,7 @@
                     within a web browser at performance levels we have not seen before,” George Hoyem, managing partner
                     of investments at In-Q-Tel, said in a statement.
                 </p>
-                <p>Cloud</p>
-                #frame
+                <p>#Cloud #frame</p>
             </div>
         </div>
         <!-- /.row -->
@@ -257,7 +266,8 @@
             </div>
             <div class="col-md-8">
                 <h4>Google unveils VR headsets that don't need smartphones</h4>
-                <p> <span class="label label-primary">400자 요약</span>&nbsp; &nbsp;What the Google started at last year's I/O conference, where it announced the Daydream mobile
+                <p><span class="label label-primary">400자 요약</span>&nbsp; &nbsp;What the Google started at last year's
+                    I/O conference, where it announced the Daydream mobile
                     virtual reality platform and headset, is now complete with the announcement of Google's new,
                     standalone (no smartphone needed) VR headset project that uses inside out tracking it calls
                     WorldSense.
@@ -268,8 +278,12 @@
                     on tripods immediately makes Google's VR device platform more user-friendly in terms of set-up and
                     ease of use.
                 </p>
-                <p>Vr</p>
-                #headset
+                <div class="expert-comment">
+                    <p class="quote-content"><span class="label label-primary inline">전문가 코멘트</span><em>&nbsp; &nbsp;AI
+                        전문가로서 위 기사는 이부분을 중요시해서 보시면 됩니다.</em> -@박영진, IT 전문가</p>
+                    <img src="{{ url_for('static', filename='img/avatar-5.jpg') }}" class="thumb-sm br-radius">
+                </div>
+                <p>#VR/AR #headset</p>
             </div>
         </div>
         <!-- /.row -->
@@ -334,18 +348,20 @@
 <script src="{{ url_for('static', filename='js/jquery.app.js') }}"></script>
 
 <!-- datetime picker-->
-<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}" charset="UTF-8"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/locales/bootstrap-datetimepicker.ko.js') }}" charset="UTF-8"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"
+        charset="UTF-8"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/locales/bootstrap-datetimepicker.ko.js') }}"
+        charset="UTF-8"></script>
 <script type="text/javascript">
-	$('.form_date').datetimepicker({
-        language:  'ko',
+    $('.form_date').datetimepicker({
+        language: 'ko',
         weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
         pickerPosition: "bottom-left"
     });
 </script>

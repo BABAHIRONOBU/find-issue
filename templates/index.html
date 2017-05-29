@@ -21,11 +21,11 @@
     <link href="{{ url_for('static', filename='assets/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='assets/ionicon/css/ionicons.min.css') }}" rel="stylesheet">
 
-    <!--Morris Chart CSS -->
-    <link href="{{ url_for('static', filename='assets/morris/morris.css') }}" rel="stylesheet">
-
     <!-- sweet alerts -->
     <link href="{{ url_for('static', filename='assets/sweet-alert/sweet-alert.min.css') }}" rel="stylesheet">
+
+    <!-- datetime picker-->
+    <link href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" media="screen">
 
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -166,7 +166,19 @@
     <!-- ================== -->
 
     <div class="wraper container-fluid">
-
+        <div class="row">
+            <div class="form-group">
+                <label for="dtp_input2" class="col-md-1 control-label">날짜 선택</label>
+                <div class="input-group date form_date col-md-4" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input2" value="" />
+                <button type="button" class="btn btn-primary m-b-5 btn-datepicker">선택</button>
+            </div>
+        </div>
+        <hr>
         <div class="row">
             <div class="col-md-1 col-date">
                 <h1 class="date-en">
@@ -320,6 +332,23 @@
 
 <!-- sweet alerts -->
 <script src="{{ url_for('static', filename='js/jquery.app.js') }}"></script>
+
+<!-- datetime picker-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}" charset="UTF-8"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/locales/bootstrap-datetimepicker.ko.js') }}" charset="UTF-8"></script>
+<script type="text/javascript">
+	$('.form_date').datetimepicker({
+        language:  'ko',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0,
+        pickerPosition: "bottom-left"
+    });
+</script>
 
 </body>
 </html>

@@ -12,3 +12,14 @@ div.brand-wrapper div h3{
 img.brand-logo{
     max-width: 70px;
 }
+
+button.btn-datepicker{
+    display: inline-block;
+}
+span.input-group-addon{
+    padding-right: 24px;
+}
+.input-group[class*=col-]{
+    display: inline-flex;
+    margin-right: 10px;
+}

@@ -57,6 +57,14 @@ def cloud():
 def ecommerce():
     return render_template('ecommerce.html')
 
+@app.route('/tech/smart-device')
+def smart_device():
+    return render_template('ecommerce.html')
+
+@app.route('/tech/security')
+def security():
+    return render_template('ecommerce.html')
+
 @app.route('/tech/vr')
 def tech_vr():
     return render_template('vr.html')
@@ -76,4 +84,4 @@ def page_not_foun(e):
 # launch
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)

@@ -465,7 +465,7 @@ header {
 /***************** 5.Footer ****************/
 .footer {
   color: #58666e;
-  position: absolute;
+  position: static;
   left: 250px;
   right: 0px;
   bottom: 0px;

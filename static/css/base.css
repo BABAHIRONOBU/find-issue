@@ -1,0 +1,14 @@
+div.brand-wrapper{
+    text-align: center;
+}
+div.brand-wrapper div{
+    display: inline-block;
+}
+div.brand-wrapper div h3{
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+img.brand-logo{
+    max-width: 70px;
+}

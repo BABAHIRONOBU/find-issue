@@ -1,5 +1,13 @@
+div.landing-layer{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    text-align: center;
+}
 div.landing-layer h2{
     clear: both;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 div.article-row{
     margin-top: 24px;
@@ -32,4 +40,142 @@ div.news-info{
     padding: 20px;
     padding-bottom: 15px;
 
+}
+div.meta{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.meta ul{
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    padding-left: 0px;
+    list-style: none;
+    margin-bottom: 10px;
+}
+.meta ul li{
+    padding-right: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    color: #999;
+    font-size: 13px;
+}
+.meta ul li:first-child{
+    padding-left: 0px;
+}
+
+
+div.landing-layer-2{
+    clear: both;
+    background-color: #fff;
+    padding: 50px 80px 50px 80px;
+}
+div.feature-2{
+    text-align: center;
+    height: 80px;
+}
+div.feature-2 img{
+    max-height: 100%;
+}
+#feature-image{
+    margin-top: 50px;
+}
+#feature-title{
+    margin-top: 50px;
+    text-align: center;
+    color: #000;
+}
+#feature-title h1{
+    font-size: 52px;
+}
+#feature-title p{
+    font-size: 22px;
+    color: #797979;
+}
+div.feature-comment{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+div.feature-comment h2{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #000;
+}
+div.feature-comment p{
+    font-size: 18px;
+}
+
+.pricing{
+    margin-top: 100px;
+    text-align: center;
+}
+.pricing h2.price-title{
+    color: #000;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.pricing .intro{
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 15px;
+}
+.pricing .price-dialog-wrapper{
+
+}
+.pricing ul.price-dialog{
+    list-style: none;
+    margin-bottom: 31px;
+    color: black;
+    font-size: 18px;
+    line-height: 2;
+    font-style: normal;
+}
+.pricing .price-item{
+    padding: 0px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+.pricing .price-item .item-inner{
+    border-radius: 4px;
+    background-clip: padding-box;
+    position: relative;
+    border: 1px solid #eee;
+}
+.pricing .price-item .item-inner .title{
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    border-bottom: 1px dashed #ccc;
+    color: #444;
+}
+.pricing .price-item .item-inner .price-figure .currency{
+    top: -12px;
+    right: 2px;
+    position: relative;
+    color: #666;
+    font-size: 18px;
+}
+.pricing .price-item .item-inner .price-figure .number{
+    font-size: 42px;
+    font-weight: bold;
+    color: #000;
+}
+.pricing .price-item .item-inner .purchase{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.pricing .price-cols{
+    overflow: hidden;
+}
+
+button.brochure-download{
+    margin-top: 30px;
+}
+
+.footer{
+    clear: both;
 }

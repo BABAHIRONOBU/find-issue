@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="find issue it dashboard service by roa invention lab and black ruby studio">
+    <meta name="author" content="BlackRubyStudio jaewoo">
+
+    <link rel="shortcut icon" href="#">
+
+    <title>Find-issue</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-reset.css') }}" rel="stylesheet">
+
+    <!--Animation css-->
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+
+    <!--Icon-fonts css-->
+    <link href="{{ url_for('static', filename='assets/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/ionicon/css/ionicons.min.css') }}" rel="stylesheet">
+
+    <!-- sweet alerts -->
+    <link href="{{ url_for('static', filename='assets/sweet-alert/sweet-alert.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/helper.css') }}" rel="stylesheet">
+    <link href=" {{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+
+<body>
+
+<!-- Aside Start-->
+<aside class="left-panel">
+
+    <!-- brand -->
+    <div class="logo">
+        <a href="{{ url_for('index') }}" class="logo-expanded">
+            <i class="ion-social-buffer"></i>
+            <span class="nav-label">Find Issue</span>
+        </a>
+    </div>
+    <!-- / brand -->
+
+    <!-- Navbar Start -->
+    <nav class="navigation">
+        <ul class="list-unstyled">
+            <li class="active"><a href="{{ url_for('index') }}"><i class="ion-home"></i> <span
+                    class="nav-label">Home</span></a></li>
+            <li><a href="{{ url_for('today') }}"><i class="ion-android-data"></i> <span
+                    class="nav-label">일일동향</span></a></li>
+            <li class="has-submenu"><a href="#"><i class="ion-briefcase"></i> <span class="nav-label">회사별 동향</span></a>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url_for('amazon') }}">Amazon</a></li>
+                    <li><a href="{{ url_for('apple') }}">Apple</a></li>
+                    <li><a href="{{ url_for('facebook') }}">Facebook</a></li>
+                    <li><a href="{{ url_for('google') }}">Google</a></li>
+                    <li><a href="{{ url_for('microsoft') }}">Microsoft</a></li>
+                    <li><a href="{{ url_for('samsung') }}">Samsung</a></li>
+                    <li><a href="{{ url_for('twitter') }}">Twitter</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu"><a href="#"><i class="ion-flask"></i> <span class="nav-label">기술별 동향</span></a>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url_for('ai') }}">AI</a></li>
+                    <li><a href="{{ url_for('bigdata') }}">Big-data</a></li>
+                    <li><a href="{{ url_for('cloud') }}">Cloud</a></li>
+                    <li><a href="{{ url_for('ecommerce') }}">E-commerce</a></li>
+                    <li><a href="{{ url_for('security') }}">Security</a></li>
+                    <li><a href="{{ url_for('smart_device') }}">Smart Device</a></li>
+                    <li><a href="{{ url_for('tech_vr') }}">VR/AR</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('user_static') }}"><i class="ion-arrow-graph-up-right"></i><span class="nav-label">통계</span></a>
+            </li>
+            <li><a href="{{ url_for('user_setting') }}"><i class="ion-settings"></i><span
+                    class="nav-label">설정</span></a></li>
+        </ul>
+    </nav>
+    <div class="brand-wrapper">
+        <div>
+            <img class="brand-logo" src="{{ url_for('static', filename='img/logo_roa.png') }}">
+        </div>
+        <div>
+            <h3>X</h3>
+        </div>
+        <div>
+            <img class="brand-logo" src="{{ url_for('static', filename='img/logo_blackruby.png') }}">
+        </div>
+    </div>
+
+</aside>
+<!-- Aside Ends-->
+
+
+<!--Main Content Start -->
+<section class="content">
+
+    <!-- Header -->
+    <header class="top-head container-fluid">
+        <button type="button" class="navbar-toggle pull-left">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- Search -->
+        <form role="search" class="navbar-left app-search pull-left hidden-xs">
+            <input type="text" placeholder="Search..." class="form-control">
+            <a href=""><i class="fa fa-search"></i></a>
+        </form>
+
+        <!-- Left navbar -->
+        <nav class=" navbar-default hidden-xs" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="{{ url_for('index_kor') }}">번역된 한글 요약문 보기 <span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="{{ url_for('index') }}">영어 요약문 보기</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Right navbar -->
+        <ul class="list-inline navbar-right top-menu top-right-menu">
+
+
+            <!-- user login dropdown start-->
+            <li class="dropdown text-center">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <img alt="" src="{{ url_for('static', filename='img/avatar-2.jpg') }}"
+                         class="img-circle profile-img thumb-sm">
+                    <span class="username">Jae woo</span> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu extended pro-menu fadeInUp animated" tabindex="5003"
+                    style="overflow: hidden; outline: none;">
+                    <li><a href="#"><i class="fa fa-briefcase"></i>Profile</a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                </ul>
+            </li>
+            <!-- user login dropdown end -->
+        </ul>
+        <!-- End right navbar -->
+    </header>
+    <!-- Header Ends -->
+
+
+    <!-- Page Content Start -->
+    <!-- ================== -->
+    <div class="wraper">
+        <div class="landing-layer">
+            <h2>Today's Hot Issue</h2>
+            <div class="article-row">
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="https://techcrunch.com/2017/05/29/asus-skips-robots-at-this-years-computex-event-and-flaunts-super-thin-laptops-instead/">
+                                <img src="{{ url_for('static', filename='img/bg_fixing_cities.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>Asus는 올해 Computex 행사에서 로봇을 건너 뛰고 초박형 노트북을 과시.</h4>
+                            <div class="news-entry">
+                                <p>
+                                    대만의 타이페이에서 열린 행사는 아수스의 새 노트북에 초점을 맞추 었으며, ZenBook 플립 S 및 젠북 프로 (ZenBook
+                                    Flip S)에 대한 최신 정보가 새롭게 추가되었습니다. UX550.
+                                    Asus는 ZenBook Flip S가 "세계에서 가장 얇은 컨버터블 노트북"이라고 주장합니다.
+                                    ZenBook Flip S의 13.3in 4K 터치 스크린 디스플레이는 360도 회전 할 수 있으며 인텔 코어 i7-7500U 프로세서, 최대 16GB
+                                    RAM 및 1TB SSD와 같은 사양은 빠른 성능을 보장합니다.</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>TechCrunch</li>
+                                <li>by Catherine Shu</li>
+                                <li>#zenbook</li>
+                                <li>#asus</li>
+                                <li>#thick</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="http://readwrite.com/2017/05/25/att-completes-iationwide-ltem-network-ahead-schedule-dl1/?utm_source=feedly&utm_medium=webfeeds">
+                                <img src="{{ url_for('static', filename='img/bg_st_t.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>AT & T, 전국 LTE-M 네트워크를 일정보다 앞당겨 완료했습니다</h4>
+                            <div class="news-entry">
+                                <p>AT & T는 자사의 LTE-M 인터넷 오브 IOT (IoT) 네트워크를 전국적으로 출시했습니다. AT & T의 기존 LTE 네트워크에 소프트웨어
+                                    업데이트가 포함 된 이번 출시를 통해 IoT 장치는 이전보다 더 많은 장소에서 더 높은 신뢰성으로 연결할 수 있게 되었습니다. LTE-M IoT
+                                    네트워크는 캐리어 급 보안 및 안정성을 제공하는 라이센스가 있는 스펙트럼을 사용하는 세계적으로 표준화 된 3GPP 기술을 통합합니다. 이 네트워크는
+                                    대규모 롤아웃을 위해 설계되었으며, 멕시코와 캐나다를 포함한 인근 지역으로 네트워크를 가져올 수 있습니다. LTE-M Vs. 스마트 폰이 사용하는
+                                    LTE 네트워크와 귀하의 IoT 장치가 연결되는 LTE 네트워크 사이에는 몇 가지 중요한 차이점이 있습니다. 그 중 하나는 ATT 요금은 연결 당
+                                    요금이 상당히 적다는 것입니다.</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 26, 2017</li>
+                                <li>ReadWrite</li>
+                                <li>by Ryan Matthew</li>
+                                <li>#smart-device</li>
+                                <li>#network</li>
+                                <li>#AT&T</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="https://thenextweb.com/contributors/2017/05/29/artificial-intelligence-social-media-marketing-collide/#.tnw_2PBfznt2">
+                                <img src="{{ url_for('static', filename='img/bg_social.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>인공 지능과 사회 미디어 마케팅이 충돌할 때</h4>
+                            <div class="news-entry">
+                                <p>AI(인공 지능)는 이미 다양한 비즈니스 분야에서 핵심적인 역할을 하고 있으며 현재는 소셜 미디어 마케팅과 충돌하고 있습니다. 이 기능은 소셜 미디어
+                                    마케팅 캠페인의 범위와 성공을 더욱 높이기 위해 소셜 미디어 마케팅 전략을 개발하는 브랜드에 의해 다양한 방법으로 사용될 수 있습니다. 경쟁 업체가
+                                    경쟁 우위를 얻기 위해 AI를 사용하기 때문에 소셜 미디어 마케팅 전략에 인공 지능을 결합하지 않으면 캠페인에서 어떠한 수익도 얻지 못할 수 있습니다.
+                                </p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>The Next Web</li>
+                                <li>by Vivian Michaels</li>
+                                <li>#marketing</li>
+                                <li>#AI</li>
+                                <li>#campaign</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div><!-- landing layer -->
+        <div class="landing-layer">
+            <h2>Issue: ARM</h2>
+            <div class="article-row">
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="https://www.theverge.com/2017/5/29/15707606/arm-cortex-a75-a55-mali-g72-specs-announced">
+                                <img src="{{ url_for('static', filename='img/bg_arm.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>ARM의 새로운 프로세서는 기계 학습 기계에 전력을 공급하도록 설계되었습니다.</h4>
+                            <div class="news-entry">
+                                <p>공식적으로 ARM Cortex-A75는 기존의 A73보다 성능이 22 % 향상된 새로운 플래그십 티어 모바일 프로세서 설계입니다.
+                                    ARM Cortex-A75는 전반적으로 더블 피겨 성능을 향상시킵니다. 게다가 흥미롭게도 ARM은 새로운 칩으로 기계 학습에 힘을 실어주는 것이 아니라
+                                    ML의 이점도 누릴 수있습니다.
+                                    ARM은 자사의 최신 디자인으로 구동되는 새로운 모바일 장치에 대한 "현실적인 시간 창"은 2018 년 1/4 분기가 될 것이라고 말하면서 , 중국 폰
+                                    벤더스가 디자인에서 즉각적으로 제품을 만드는 "중국의 속도"라고 묘사하는 새로운 현상을 의식하고 있습니다.</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>The Verge</li>
+                                <li>by Vlad Savov</li>
+                                <li>#arm</li>
+                                <li>#mobile</li>
+                                <li>#cpu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="https://venturebeat.com/2017/05/28/arm-wants-to-boost-ai-performance-by-50-times-over-five-years/">
+                                <img src="{{ url_for('static', filename='img/bg_arm_vb.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>ARM, AI 성능을 5 년 동안 50 배 향상</h4>
+                            <div class="news-entry">
+                                <p>이 프로세서에는 하이 엔드에서 대규모 단일 스레드 성능을 제공하는 ARM Cortex-A75, 고효율 프로세서 인 ARM Cortex-A55, 40 %
+                                    더 향상된 그래픽 성능으로 프리미엄 모바일 기기에서 가상 현실, 게임 및 기계 학습의 가능성을 확대하는 ARM Mali-G72 그래픽 프로세서 등을
+                                    포함합니다.
+                                    ARM은 인공 지능 프로세싱을보다 잘 처리하기 위해 스마트 폰과 랩톱과 같은 네트워크 가장자리와 클라우드에 연결된 컴퓨팅 사이에 보다 빠르고 효율적이며
+                                    분산형 인텔리전스를 사용하여 컴퓨팅 구조를 변경해야한다는 것을 깨달았습니다.
+                                    영국 캠브리지에 있는 회사인 ARM DynamIQ 기술은 에지에서 클라우드까지의 인텔리전스를 배포하여 AI 처리를 향상시키는 첫 번째
+                                    이정표가되었습니다.</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>VentureBeat</li>
+                                <li>by Dean Takahashi</li>
+                                <li>#arm</li>
+                                <li>#processing</li>
+                                <li>#ai</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="http://www.zdnet.com/article/arm-launches-new-cortex-mali-processors-to-boost-ai-vr-mobile-tech/">
+                                <img src="{{ url_for('static', filename='img/bg_zdnet.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>ARM, 뇌 손상 치료 용 칩 공급</h4>
+                            <div class="news-entry">
+                                <p>칩 설계 업체 인 ARM은 미국 연구원과 협력하여 인간 두뇌에 이식 할 수 있는 칩을 개발하는 프로젝트를 진행했다.
+                                    또한 연구원은 이미 이 기술의 초기 버전을 개발했습니다.
+                                    '원거리 시력' 첫 번째 단계는 뇌의 신호를 척수에 이식 된 자극 장치로 전송할 수 있는 "시스템 온칩 (system on a chip)"을 설계하여
+                                    척추 또는 신경 상태의 환자가 운동을 제어 할 수있게 하는 것입니다.
+                                </p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>ZDnet</li>
+                                <li>by Charlie Osborne</li>
+                                <li>#arm</li>
+                                <li>#AI</li>
+                                <li>#VR/AR</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div><!-- landing layer -->
+
+        <div class="landing-layer-2">
+            <div class="row">
+                <div class="col-sm-12" id="feature-title">
+                    <p class="slogan">하루 5분으로 IT 전문 소식을 전해드립니다.</p>
+                    <h1 class="title">Find Issue</h1>
+                </div>
+            </div>
+            <div class="row" id="feature-image">
+                <div class="col-md-4">
+                    <div class="feature-2">
+                        <img src="{{ url_for('static', filename='img/feature-1.png') }}">
+                    </div>
+                    <div class="feature-comment">
+                        <h2>요약</h2>
+                        <p>바쁜 당신을 위해 최신 IT 전문 기사들을 400자이내로 간단요약을 해놓았어요.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-2">
+                        <img src="{{ url_for('static', filename='img/feature-2.png') }}">
+                    </div>
+                    <div class="feature-comment">
+                        <h2>키워드 분류</h2>
+                        <p>가장 영향력 있는 회사/기술별로 기사를 분류하여 필요한 뉴스만 보실 수 있어요.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-2">
+                        <img src="{{ url_for('static', filename='img/feature-3.png') }}">
+                    </div>
+                    <div class="feature-comment">
+                        <h2>한글 번역</h2>
+                        <p>모든 요약본에는 한글이 더 편한 당신을 위한 한글 번역본이 준비되어 있어요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="landing-layer">
+            <div class="pricing">
+                <h2 class="price-title">2주 무료! 모든 요약문 무제한 구독</h2>
+                <p class="intro">심플한 가격체계, 언제든 구독형태를 취소 및 변경 가능합니다.</p>
+                <div class="price-dialog-wrapper">
+                    <ul class="price-dialog">
+                        <li><p><i class="ion-social-foursquare"></i>&nbsp;&nbsp;요약 및 번역 제공</p></li>
+                        <li><p><i class="ion-arrow-graph-up-right"></i>&nbsp;&nbsp;키워드 통계</p></li>
+                        <li><p><i class="ion-printer"></i>&nbsp;&nbsp;보고서 다운 및 출력</p></li>
+                        <li><p><i class="ion-android-forums"></i>&nbsp;&nbsp;전문가 코멘트</p></li>
+                    </ul>
+                </div>
+                <div class="price-cols">
+                    <div class="col-md-4">
+                        <div class="price-item">
+                            <div class="item-inner">
+                                <div class="price-content">
+                                    <h3 class="title">1개월</h3>
+                                    <p class="price-figure">
+                                        <span class="currency">₩</span>
+                                        <span class="number">90</span>
+                                        <span class="unit">만원</span>
+                                    </p>
+                                </div>
+                                <div class="purchase">
+                                    <button class="btn btn-primary">구매하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="price-item">
+                            <div class="item-inner">
+                                <div class="price-content">
+                                    <h3 class="title">3개월</h3>
+                                    <p class="price-figure">
+                                        <span class="currency">₩</span>
+                                        <span class="number">250</span>
+                                        <span class="unit">만원</span>
+                                    </p>
+                                </div>
+                                <div class="purchase">
+                                    <button class="btn btn-primary">구매하기</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="price-item">
+                            <div class="item-inner">
+                                <div class="price-content">
+                                    <h3 class="title">6개월</h3>
+                                    <p class="price-figure">
+                                        <span class="currency">₩</span>
+                                        <span class="number">400</span>
+                                        <span class="unit">만원</span>
+                                    </p>
+                                </div>
+                                <div class="purchase">
+                                    <button class="btn btn-primary">구매하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-icon btn-danger m-b-5 brochure-download"><i class="ion-arrow-down-a"></i>&nbsp;&nbsp;상품소개서 다운로드
+            </button>
+        </div>
+    </div>
+    <!-- Page Content Ends -->
+    <!-- ================== -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        2017 © Roa Invention LAB x Black Ruby Studio
+    </footer>
+    <!-- Footer Ends -->
+
+
+</section>
+<!-- Main Content Ends -->
+
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/modernizr.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pace.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.scrollTo.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.nicescroll.js') }}" type="text/javascript"></script>
+
+<!-- sweet alerts -->
+<script src="{{ url_for('static', filename='js/jquery.app.js') }}"></script>
+</body>
+</html>

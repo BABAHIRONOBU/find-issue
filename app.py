@@ -7,7 +7,11 @@ app = Flask(__name__)
 # controllers
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index_english.html')
+
+@app.route('/kor')
+def index_kor():
+    return render_template('index_kor.html')
 
 @app.route('/today')
 def today():

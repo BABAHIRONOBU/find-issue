@@ -24,10 +24,6 @@
     <!-- sweet alerts -->
     <link href="{{ url_for('static', filename='assets/sweet-alert/sweet-alert.min.css') }}" rel="stylesheet">
 
-    <!-- datetime picker-->
-    <link href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet"
-          media="screen">
-
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/helper.css') }}" rel="stylesheet">
@@ -131,9 +127,9 @@
         <nav class=" navbar-default hidden-xs" role="navigation">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">한국어로 번역 <span class="caret"></span></a>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="{{ url_for('index_kor')}}">영어 요약문 보기 <span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
-                        <li><a href="#">In English</a></li>
+                        <li><a href="{{ url_for('index_kor')}}">번역된 한글 요약문 보기</a></li>
                     </ul>
                 </li>
             </ul>
@@ -166,15 +162,15 @@
 
     <!-- Page Content Start -->
     <!-- ================== -->
-    <div class="wraper container-fluid">
-        <div class="lading-layer">
+    <div class="wraper">
+        <div class="landing-layer">
             <h2>Today's Hot Issue</h2>
             <div class="article-row">
                 <article class="card-item col-md-4 col-sm-6 col-xs-12">
                     <div class="card-inner">
                         <div class="news-photo">
                             <a href="https://techcrunch.com/2017/05/29/fixing-cities/">
-                                <img src="{{ url_for('static', filename='img/bg_6.jpg') }}">
+                                <img src="{{ url_for('static', filename='img/bg_fixing_cities.jpg') }}">
                             </a>
                         </div>
                         <div class="news-info">
@@ -192,6 +188,9 @@
                                 <li>May 29, 2017</li>
                                 <li>TechCrunch</li>
                                 <li>by Eric Eldon</li>
+                                <li>#local</li>
+                                <li>#tech</li>
+                                <li>#company</li>
                             </ul>
                         </div>
                     </div>
@@ -199,36 +198,60 @@
                 <article class="card-item col-md-4 col-sm-6 col-xs-12">
                     <div class="card-inner">
                         <div class="news-photo">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/bg_1.jpg') }}">
+                            <a href="http://readwrite.com/2017/05/25/att-completes-iationwide-ltem-network-ahead-schedule-dl1/?utm_source=feedly&utm_medium=webfeeds">
+                                <img src="{{ url_for('static', filename='img/bg_st_t.jpg') }}">
                             </a>
                         </div>
                         <div class="news-info">
-                            <h4>Uber board reportedly receiving Eric Holder’s report this week</h4>
+                            <h4>AT&T completes its nationwide LTE-M network ahead of schedule</h4>
                             <div class="news-entry">
-                                <p> Uber’s board of directors will reportedly hear the results of former Attorney
-                                    General Eric Holder’s investigation into its workplace culture on Wednesday,
-                                    according to Axios. The investigation by Holder was announced after...</p>
+                                <p>ATT has completed its nationwide rollout of its LTE-M Internet of Things (IoT)
+                                    network.This rollout, which involved a software update to ATT’s existing LTE
+                                    network, enables IoT devices to connect from more places, and with better
+                                    reliability than before.</p>
                                 <a>Read More<i class="ion-arrow-right-c"></i> </a>
                             </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 26, 2017</li>
+                                <li>ReadWrite</li>
+                                <li>by Ryan Matthew</li>
+                                <li>#smart-device</li>
+                                <li>#network</li>
+                                <li>#AT&T</li>
+                            </ul>
                         </div>
                     </div>
                 </article>
                 <article class="card-item col-md-4 col-sm-6 col-xs-12">
                     <div class="card-inner">
                         <div class="news-photo">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/bg_2.jpg') }}">
+                            <a href="https://thenextweb.com/contributors/2017/05/29/artificial-intelligence-social-media-marketing-collide/#.tnw_2PBfznt2">
+                                <img src="{{ url_for('static', filename='img/bg_social.jpg') }}">
                             </a>
                         </div>
                         <div class="news-info">
-                            <h4>UK eyeing fines for social media content moderation failures</h4>
+                            <h4>When Artificial Intelligence and Social Media Marketing Collide</h4>
                             <div class="news-entry">
-                                <p>After the UK Prime Minister Theresa May secured a joint statement from the G7 on
-                                    Friday, backing a call for social media firms to do more to combat online extremism,
-                                    a Conservative minister has suggested the party is open to bringing...</p>
+                                <p>The artificial intelligence (AI) is already playing a key role in various business
+                                    sectors, and now it’s colliding with the social media marketing. This feature can be
+                                    used in various ways by the brands for developing their social media marketing
+                                    strategies to further increase the reach and success of their social media marketing
+                                    campaign.
+                                </p>
                                 <a>Read More<i class="ion-arrow-right-c"></i> </a>
                             </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>The Next Web</li>
+                                <li>by Vivian Michaels</li>
+                                <li>#marketing</li>
+                                <li>#AI</li>
+                                <li>#campaign</li>
+                            </ul>
                         </div>
                     </div>
                 </article>
@@ -241,7 +264,7 @@
                     <div class="card-inner">
                         <div class="news-photo">
                             <a href="https://www.theverge.com/2017/5/29/15707606/arm-cortex-a75-a55-mali-g72-specs-announced">
-                                <img src="{{ url_for('static', filename='img/bg_6.jpg') }}">
+                                <img src="{{ url_for('static', filename='img/bg_arm.jpg') }}">
                             </a>
                         </div>
                         <div class="news-info">
@@ -254,109 +277,186 @@
                                 <a>Read More<i class="ion-arrow-right-c"></i> </a>
                             </div>
                         </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>The Verge</li>
+                                <li>by Vlad Savov</li>
+                                <li>#arm</li>
+                                <li>#mobile</li>
+                                <li>#cpu</li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
                 <article class="card-item col-md-4 col-sm-6 col-xs-12">
                     <div class="card-inner">
                         <div class="news-photo">
                             <a href="https://venturebeat.com/2017/05/28/arm-wants-to-boost-ai-performance-by-50-times-over-five-years/">
-                                <img src="{{ url_for('static', filename='img/bg_1.jpg') }}">
+                                <img src="{{ url_for('static', filename='img/bg_arm_vb.jpg') }}">
                             </a>
                         </div>
                         <div class="news-info">
                             <h4>ARM wants to boost AI performance by 50X over 5 years</h4>
                             <div class="news-entry">
-                                <p>Both of these devices are supposed to replace the computer. They are a bit far from
-                                    this task (and they will always be) but they are useful in many ways and have
-                                    similar features with the computer devices, which can really help us when we are not
-                                    at home.</p>
+                                <p>The processors include the ARM Cortex-A75, which delivers massive single-thread
+                                    compute performance at the high end; the ARM Cortex-A55, a high-efficiency
+                                    processor; and the ARM Mali-G72 graphics processor, which expands the possibilities
+                                    for virtual reality, gaming, and machine learning on premium mobile devices, with 40
+                                    percent more graphics performance.</p>
                                 <a>Read More<i class="ion-arrow-right-c"></i> </a>
                             </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>VentureBeat</li>
+                                <li>by Dean Takahashi</li>
+                                <li>#arm</li>
+                                <li>#processing</li>
+                                <li>#ai</li>
+                            </ul>
                         </div>
                     </div>
                 </article>
                 <article class="card-item col-md-4 col-sm-6 col-xs-12">
                     <div class="card-inner">
                         <div class="news-photo">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/bg_2.jpg') }}">
+                            <a href="http://www.zdnet.com/article/arm-launches-new-cortex-mali-processors-to-boost-ai-vr-mobile-tech/">
+                                <img src="{{ url_for('static', filename='img/bg_zdnet.jpg') }}">
                             </a>
                         </div>
                         <div class="news-info">
-                            <h4>Surface Pro 5, The Primary Focus For Microsoft At The Moment</h4>
+                            <h4>ARM launches new Cortex, Mali processors to boost AI, VR mobile tech</h4>
                             <div class="news-entry">
-                                <p>Microsoft is among the many other tech giants that are constantly initiating changes
-                                    in their products and striving towards driving excellence year after year. The
-                                    company has notably dominated the tech industry for a really long time, however
-                                    competition has changed...</p>
+                                <p>ARM has unveiled a set of new processors to provide the brainpower for our mobile
+                                    devices to cope with advanced artificial intelligence (AI), virtual reality (VR),
+                                    and mixed reality (MR) technologies.On Monday, the British semiconductor giant said
+                                    the new Cortex-A75 and Cortex-A55 processors, alongside the new Mali-G72 graphics
+                                    processor...
+                                </p>
                                 <a>Read More<i class="ion-arrow-right-c"></i> </a>
                             </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>ZDnet</li>
+                                <li>by Charlie Osborne</li>
+                                <li>#arm</li>
+                                <li>#AI</li>
+                                <li>#VR/AR</li>
+                            </ul>
                         </div>
                     </div>
                 </article>
             </div>
-        </div>
-        <div class="landing-layer">
-            <h2>Issue: Surface Pro 5</h2>
-            <div class="article-row">
-                <article class="card-item col-md-4 col-sm-6 col-xs-12">
-                    <div class="card-inner">
-                        <div class="news-photo">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/bg_6.jpg') }}">
-                            </a>
-                        </div>
-                        <div class="news-info">
-                            <h4>MacBook Pro v Surface Pro 5</h4>
-                            <div class="news-entry">
-                                <p> Welcome to our MacBook Pro v Surface Pro comparison review.
+        </div><!-- landing layer -->
 
-                                    Microsoft has announced a new iteration of its popular Surface Pro line, with the
-                                    new models featuring the latest Intel processors and a number of other upgrades. We
-                                    see how they compare to Apple's own workhorse, the MacBook Pro.</p>
-                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+        <div class="landing-layer-2">
+            <div class="row">
+                <div class="col-sm-12" id="feature-title">
+                    <p class="slogan">하루 5분으로 IT 전문 소식을 전해드립니다.</p>
+                    <h1 class="title">Find Issue</h1>
+                </div>
+            </div>
+            <div class="row" id="feature-image">
+                <div class="col-md-4">
+                    <div class="feature-2">
+                        <img src="{{ url_for('static', filename='img/feature-1.png') }}">
+                    </div>
+                    <div class="feature-comment">
+                        <h2>요약</h2>
+                        <p>바쁜 당신을 위해 최신 IT 전문 기사들을 400자이내로 간단요약을 해놓았어요.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-2">
+                        <img src="{{ url_for('static', filename='img/feature-2.png') }}">
+                    </div>
+                    <div class="feature-comment">
+                        <h2>키워드 분류</h2>
+                        <p>가장 영향력 있는 회사/기술별로 기사를 분류하여 필요한 뉴스만 보실 수 있어요.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-2">
+                        <img src="{{ url_for('static', filename='img/feature-3.png') }}">
+                    </div>
+                    <div class="feature-comment">
+                        <h2>한글 번역</h2>
+                        <p>모든 요약본에는 한글이 더 편한 당신을 위한 한글 번역본이 준비되어 있어요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="landing-layer">
+            <div class="pricing">
+                <h2 class="price-title">2주 무료! 모든 요약문 무제한 구독</h2>
+                <p class="intro">심플한 가격체계, 언제든 구독형태를 취소 및 변경 가능합니다.</p>
+                <div class="price-dialog-wrapper">
+                    <ul class="price-dialog">
+                        <li><p><i class="ion-social-foursquare"></i>&nbsp;&nbsp;요약 및 번역 제공</p></li>
+                        <li><p><i class="ion-arrow-graph-up-right"></i>&nbsp;&nbsp;키워드 통계</p></li>
+                        <li><p><i class="ion-printer"></i>&nbsp;&nbsp;보고서 다운 및 출력</p></li>
+                        <li><p><i class="ion-android-forums"></i>&nbsp;&nbsp;전문가 코멘트</p></li>
+                    </ul>
+                </div>
+                <div class="price-cols">
+                    <div class="col-md-4">
+                        <div class="price-item">
+                            <div class="item-inner">
+                                <div class="price-content">
+                                    <h3 class="title">1개월</h3>
+                                    <p class="price-figure">
+                                        <span class="currency">₩</span>
+                                        <span class="number">90</span>
+                                        <span class="unit">만원</span>
+                                    </p>
+                                </div>
+                                <div class="purchase">
+                                    <button class="btn btn-primary">구매하기</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </article>
-                <article class="card-item col-md-4 col-sm-6 col-xs-12">
-                    <div class="card-inner">
-                        <div class="news-photo">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/bg_1.jpg') }}">
-                            </a>
-                        </div>
-                        <div class="news-info">
-                            <h4>Choosing Between MacBook Pro and Surface Pro 5</h4>
-                            <div class="news-entry">
-                                <p>Both of these devices are supposed to replace the computer. They are a bit far from
-                                    this task (and they will always be) but they are useful in many ways and have
-                                    similar features with the computer devices, which can really help us when we are not
-                                    at home.</p>
-                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                    <div class="col-md-4">
+                        <div class="price-item">
+                            <div class="item-inner">
+                                <div class="price-content">
+                                    <h3 class="title">3개월</h3>
+                                    <p class="price-figure">
+                                        <span class="currency">₩</span>
+                                        <span class="number">250</span>
+                                        <span class="unit">만원</span>
+                                    </p>
+                                </div>
+                                <div class="purchase">
+                                    <button class="btn btn-primary">구매하기</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </article>
-                <article class="card-item col-md-4 col-sm-6 col-xs-12">
-                    <div class="card-inner">
-                        <div class="news-photo">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/bg_2.jpg') }}">
-                            </a>
-                        </div>
-                        <div class="news-info">
-                            <h4>Surface Pro 5, The Primary Focus For Microsoft At The Moment</h4>
-                            <div class="news-entry">
-                                <p>Microsoft is among the many other tech giants that are constantly initiating changes
-                                    in their products and striving towards driving excellence year after year. The
-                                    company has notably dominated the tech industry for a really long time, however
-                                    competition has changed...</p>
-                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                    <div class="col-md-4">
+                        <div class="price-item">
+                            <div class="item-inner">
+                                <div class="price-content">
+                                    <h3 class="title">6개월</h3>
+                                    <p class="price-figure">
+                                        <span class="currency">₩</span>
+                                        <span class="number">400</span>
+                                        <span class="unit">만원</span>
+                                    </p>
+                                </div>
+                                <div class="purchase">
+                                    <button class="btn btn-primary">구매하기</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
         </div>
     </div>
@@ -385,25 +485,5 @@
 
 <!-- sweet alerts -->
 <script src="{{ url_for('static', filename='js/jquery.app.js') }}"></script>
-
-<!-- datetime picker-->
-<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"
-        charset="UTF-8"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/locales/bootstrap-datetimepicker.ko.js') }}"
-        charset="UTF-8"></script>
-<script type="text/javascript">
-    $('.form_date').datetimepicker({
-        language: 'ko',
-        weekStart: 1,
-        todayBtn: 1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 2,
-        minView: 2,
-        forceParse: 0,
-        pickerPosition: "bottom-left"
-    });
-</script>
-
 </body>
 </html>

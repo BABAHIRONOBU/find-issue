@@ -31,7 +31,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/helper.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
 
     <link href=" {{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
 
@@ -87,8 +87,8 @@
                     <li><a href="{{ url_for('tech_vr') }}">VR/AR</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url_for('user_static') }}"><i class="ion-arrow-graph-up-right"></i><span class="nav-label">통계</span><span
-                    class="badge bg-success">New</span></a></li>
+            <li><a href="{{ url_for('user_static') }}"><i class="ion-arrow-graph-up-right"></i><span class="nav-label">통계</span></a>
+            </li>
             <li><a href="{{ url_for('user_setting') }}"><i class="ion-settings"></i><span
                     class="nav-label">설정</span></a></li>
         </ul>
@@ -169,20 +169,10 @@
 
     <div class="wraper container-fluid">
         <div class="row">
-            <div class="form-group">
-                <label for="dtp_input2" class="col-md-1 control-label">날짜 선택</label>
-                <div class="input-group date form_date col-md-4" data-date="" data-date-format="dd MM yyyy"
-                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="16" type="text" value="" readonly>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
-                <input type="hidden" id="dtp_input2" value=""/>
-                <button type="button" class="btn btn-primary m-b-5 btn-datepicker">선택</button>
-                <button class="btn btn-icon btn-danger m-b-5 pull-right"> <i class="ion-arrow-down-a"></i>&nbsp;&nbsp;PDF 다운로드</button>
-            </div>
+            <button class="btn btn-icon btn-danger m-b-5 pull-right"><i class="ion-arrow-down-a"></i>&nbsp;&nbsp;PDF
+                다운로드
+            </button>
         </div>
-        <hr>
         <div class="row">
             <div class="col-md-1 col-date">
                 <h1 class="date-en">

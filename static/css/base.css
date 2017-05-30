@@ -27,3 +27,18 @@ span.input-group-addon{
 div.expert-comment *{
     display: inline;
 }
+
+.sidebar-brand{
+  text-align: center;
+  padding-right: 30px;
+}
+
+
+.date-en{
+margin: auto;
+}
+a:link { color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+div p {
+vertical-align : text-bottom;
+}

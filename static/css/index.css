@@ -1,0 +1,35 @@
+div.landing-layer h2{
+    clear: both;
+}
+div.article-row{
+    margin-top: 24px;
+}
+article.card-item{
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+div.card-inner{
+    padding: 0px;
+    position: relative;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.05);
+}
+div.news-photo{
+    overflow: hidden;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 4px;
+    background-clip: padding-box;
+}
+div.news-photo a img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+div.news-info{
+    padding: 20px;
+    padding-bottom: 15px;
+
+}

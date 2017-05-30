@@ -31,9 +31,9 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/helper.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
-
     <link href=" {{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -87,8 +87,8 @@
                     <li><a href="{{ url_for('tech_vr') }}">VR/AR</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url_for('user_static') }}"><i class="ion-arrow-graph-up-right"></i><span class="nav-label">통계</span><span
-                    class="badge bg-success">New</span></a></li>
+            <li><a href="{{ url_for('user_static') }}"><i class="ion-arrow-graph-up-right"></i><span class="nav-label">통계</span></a>
+            </li>
             <li><a href="{{ url_for('user_setting') }}"><i class="ion-settings"></i><span
                     class="nav-label">설정</span></a></li>
         </ul>
@@ -166,160 +166,199 @@
 
     <!-- Page Content Start -->
     <!-- ================== -->
-
     <div class="wraper container-fluid">
-        <div class="row">
-            <div class="form-group">
-                <label for="dtp_input2" class="col-md-1 control-label">날짜 선택</label>
-                <div class="input-group date form_date col-md-4" data-date="" data-date-format="dd MM yyyy"
-                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="16" type="text" value="" readonly>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
-                <input type="hidden" id="dtp_input2" value=""/>
-                <button type="button" class="btn btn-primary m-b-5 btn-datepicker">선택</button>
-                <button class="btn btn-icon btn-danger m-b-5 pull-right"> <i class="ion-arrow-down-a"></i>&nbsp;&nbsp;PDF 다운로드</button>
+        <div class="lading-layer">
+            <h2>Today's Hot Issue</h2>
+            <div class="article-row">
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="https://techcrunch.com/2017/05/29/fixing-cities/">
+                                <img src="{{ url_for('static', filename='img/bg_6.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>Fixing cities</h4>
+                            <div class="news-entry">
+                                <p> Exciting news for people who live, well, everywhere: Incremental changes happening
+                                    across tech, local news and local government are finally making the world around you
+                                    transparent. This isn’t some “smart cities” concept fantasy, like those corporate
+                                    marketing videos you see. </p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <ul>
+                                <li>May 29, 2017</li>
+                                <li>TechCrunch</li>
+                                <li>by Eric Eldon</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/bg_1.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>Uber board reportedly receiving Eric Holder’s report this week</h4>
+                            <div class="news-entry">
+                                <p> Uber’s board of directors will reportedly hear the results of former Attorney
+                                    General Eric Holder’s investigation into its workplace culture on Wednesday,
+                                    according to Axios. The investigation by Holder was announced after...</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/bg_2.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>UK eyeing fines for social media content moderation failures</h4>
+                            <div class="news-entry">
+                                <p>After the UK Prime Minister Theresa May secured a joint statement from the G7 on
+                                    Friday, backing a call for social media firms to do more to combat online extremism,
+                                    a Conservative minister has suggested the party is open to bringing...</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div><!-- landing layer -->
+        <div class="landing-layer">
+            <h2>Issue: ARM’s new processors</h2>
+            <div class="article-row">
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="https://www.theverge.com/2017/5/29/15707606/arm-cortex-a75-a55-mali-g72-specs-announced">
+                                <img src="{{ url_for('static', filename='img/bg_6.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>ARM’s new processors are designed to power the machine-learning machines</h4>
+                            <div class="news-entry">
+                                <p> Taiwan’s big showpiece event where PC makers roll out the latest and best
+                                    implementations of Intel CPUs, mobile rival ARM is announcing its own big news with
+                                    the unveiling of a new generation of ARM CPUs and GPUs. Official today, the ARM
+                                    Cortex-A75 is the new flagship-tier mobile processor design,</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="https://venturebeat.com/2017/05/28/arm-wants-to-boost-ai-performance-by-50-times-over-five-years/">
+                                <img src="{{ url_for('static', filename='img/bg_1.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>ARM wants to boost AI performance by 50X over 5 years</h4>
+                            <div class="news-entry">
+                                <p>Both of these devices are supposed to replace the computer. They are a bit far from
+                                    this task (and they will always be) but they are useful in many ways and have
+                                    similar features with the computer devices, which can really help us when we are not
+                                    at home.</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/bg_2.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>Surface Pro 5, The Primary Focus For Microsoft At The Moment</h4>
+                            <div class="news-entry">
+                                <p>Microsoft is among the many other tech giants that are constantly initiating changes
+                                    in their products and striving towards driving excellence year after year. The
+                                    company has notably dominated the tech industry for a really long time, however
+                                    competition has changed...</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-1 col-date">
-                <h1 class="date-en">
-                    <small>May</small>
-                </h1>
-                <hr align="left" style="border : solid; width : 50%">
-                <h1 class="date-num"><strong>22</strong></h1>
-            </div>
-            <div class="col-md-3">
-                <a target="blank" href="https://www.oreilly.com/ideas/how-ai-is-used-to-infer-human-emotion">
-                    <img class="img-responsive" src="http://placehold.it/600x400" alt="">
-                </a>
-            </div>
-            <div class="col-md-8">
-                <h4>How AI is used to infer human emotion</h4>
-                <p><span class="label label-primary">400자 요약</span>&nbsp; &nbsp; Technology that reads your emotional
-                    state, for example by combining facial and voice expressions,
-                    represents the emotion AI space.
-                    Our technology, like many computer vision approaches, relies on machine learning techniques in which
-                    algorithms learn from examples (training data).
-                    We are continuously investing in approaches such as active learning (human-assisted machine
-                    learning) and transfer learning (the idea that a model-specific modality or data set can then
-                    transfer to a different data set, so a video analyzed for facial expression can also be labeled for
-                    the speech modality).
-                </p>
-                <div class="expert-comment">
-                    <p class="quote-content"><span class="label label-primary inline">전문가 코멘트</span><em>&nbsp; &nbsp;AI
-                        전문가로서 위 기사는 이부분을 중요시해서 보시면 됩니다.</em> -@박형진, 개발자</p>
-                    <img src="{{ url_for('static', filename='img/avatar-3.jpg') }}" class="thumb-sm br-radius">
-                </div>
-                <p>#AI #active learning</p>
-            </div>
-        </div>
-        <!-- /.row -->
-        <hr>
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-1">
-                <h1 class="date-en">
-                    <small>May</small>
-                </h1>
-                <hr align="left" style="border : solid; width : 50%">
-                <h1 class="date-num"><strong>22</strong></h1>
-            </div>
-            <div class="col-md-3">
-                <a target="blank"
-                   href="https://venturebeat.com/2017/05/17/frame-raises-16-million-to-bring-your-desktop-to-the-cloud/">
-                    <img class="img-responsive" src="http://placehold.it/600x400" alt="">
-                </a>
-            </div>
-            <div class="col-md-8">
-                <h4>Frame raises $16 million to bring your desktop to the cloud</h4>
-                <p><span class="label label-primary">400자 요약</span>&nbsp; &nbsp;Frame raised $16 million to help build
-                    out a cloud-based platform that hosts desktop workspaces
-                    capable of handling data-intensive applications.
-                    Frame’s platform allows Windows applications to run inside a browser in a way that its investors say
-                    is faster, simpler, more easily programmable, and — on reliable cellular networks — workable on
-                    mobile devices.
-                    “Frame takes virtual desktops to the next level by delivering a solution that operates completely
-                    within a web browser at performance levels we have not seen before,” George Hoyem, managing partner
-                    of investments at In-Q-Tel, said in a statement.
-                </p>
-                <p>#Cloud #frame</p>
-            </div>
-        </div>
-        <!-- /.row -->
-        <hr>
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-1">
-                <h1 class="date-en">
-                    <small>May</small>
-                </h1>
-                <hr align="left" style="border : solid; width : 50%">
-                <h1 class="date-num"><strong>22</strong></h1>
-            </div>
-            <div class="col-md-3">
-                <a target="blank" href="http://mashable.com/2017/05/17/google-vr-headset-google-i-o/#GKTDLAwp_kqO">
-                    <img class="img-responsive" src="http://placehold.it/600x400" alt="">
-                </a>
-            </div>
-            <div class="col-md-8">
-                <h4>Google unveils VR headsets that don't need smartphones</h4>
-                <p><span class="label label-primary">400자 요약</span>&nbsp; &nbsp;What the Google started at last year's
-                    I/O conference, where it announced the Daydream mobile
-                    virtual reality platform and headset, is now complete with the announcement of Google's new,
-                    standalone (no smartphone needed) VR headset project that uses inside out tracking it calls
-                    WorldSense.
-                    Google's VR headset inside-out positional tracking means that, unlike the Oculus Rift and HTC Vive,
-                    Google's WorldSense VR headsets can operate without external sensor trackers, confirming rumors
-                    leading up to Wednesday's reveal.
-                    Introducing a VR headset that doesn't require the user to mount external sensors to their walls or
-                    on tripods immediately makes Google's VR device platform more user-friendly in terms of set-up and
-                    ease of use.
-                </p>
-                <div class="expert-comment">
-                    <p class="quote-content"><span class="label label-primary inline">전문가 코멘트</span><em>&nbsp; &nbsp;AI
-                        전문가로서 위 기사는 이부분을 중요시해서 보시면 됩니다.</em> -@박영진, IT 전문가</p>
-                    <img src="{{ url_for('static', filename='img/avatar-5.jpg') }}" class="thumb-sm br-radius">
-                </div>
-                <p>#VR/AR #headset</p>
-            </div>
-        </div>
-        <!-- /.row -->
-        <hr>
-    </div>
-    <!-- /.row -->
-    <!-- Pagination -->
-    <div class="row text-center">
-        <div class="col-lg-12">
-            <ul class="pagination">
-                <li>
-                    <a href="#">&laquo;</a>
-                </li>
-                <li class="active">
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">5</a>
-                </li>
-                <li>
-                    <a href="#">&raquo;</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- /.row -->
+        <div class="landing-layer">
+            <h2>Issue: Surface Pro 5</h2>
+            <div class="article-row">
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/bg_6.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>MacBook Pro v Surface Pro 5</h4>
+                            <div class="news-entry">
+                                <p> Welcome to our MacBook Pro v Surface Pro comparison review.
 
+                                    Microsoft has announced a new iteration of its popular Surface Pro line, with the
+                                    new models featuring the latest Intel processors and a number of other upgrades. We
+                                    see how they compare to Apple's own workhorse, the MacBook Pro.</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/bg_1.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>Choosing Between MacBook Pro and Surface Pro 5</h4>
+                            <div class="news-entry">
+                                <p>Both of these devices are supposed to replace the computer. They are a bit far from
+                                    this task (and they will always be) but they are useful in many ways and have
+                                    similar features with the computer devices, which can really help us when we are not
+                                    at home.</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="card-inner">
+                        <div class="news-photo">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/bg_2.jpg') }}">
+                            </a>
+                        </div>
+                        <div class="news-info">
+                            <h4>Surface Pro 5, The Primary Focus For Microsoft At The Moment</h4>
+                            <div class="news-entry">
+                                <p>Microsoft is among the many other tech giants that are constantly initiating changes
+                                    in their products and striving towards driving excellence year after year. The
+                                    company has notably dominated the tech industry for a really long time, however
+                                    competition has changed...</p>
+                                <a>Read More<i class="ion-arrow-right-c"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
     <!-- Page Content Ends -->
     <!-- ================== -->
